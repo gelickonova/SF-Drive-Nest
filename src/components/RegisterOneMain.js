@@ -161,17 +161,18 @@ export default class RegisterOneMain extends React.Component {
                                    className={this.state.disabledSubmit ? "continueBtn inactiveBtn" : "continueBtn activeBtn"}
                                    onClick={(e) => {
                                        e.preventDefault()
-                                       console.log(this.state.disabledSubmit, 'button state')
+                                       console.log('is disabled', this.state.disabledSubmit)
                                        if (!this.state.disabledSubmit) {
                                            axios.post("/registration/step1", this.state.user)
                                                .then(res => {
-                                                   console.log('done!');
+                                                   console.log(res)
                                                    if (res.status === 200) {
                                                        this.setState({
                                                            ...this.state,
                                                            invalidPassword: false,
                                                            invalidEmail: false
                                                        })
+                                                       console.log('to step 2!')
                                                        this.props.history.push('/registration/step2')
                                                    }
                                                }).catch(err => {

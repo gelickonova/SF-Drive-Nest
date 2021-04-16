@@ -89,6 +89,7 @@ export class AppController {
         if (err) throw err;
         console.log('user successfully saved!')
       })
+        res.sendStatus(200)
       return '';
     }
   }
