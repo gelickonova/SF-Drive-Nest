@@ -1,0 +1,146 @@
+@import "variables";
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+a, .button {
+  cursor: pointer;
+}
+
+.faq-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .faq-pic{
+    margin-top: 80px;
+  }
+
+  .faq-h1 {
+    font-weight: bold;
+    font-size: 64px;
+    line-height: 120%;
+    text-align: center;
+    color: $base-black;
+    margin-bottom: 30px;
+    margin-top: 60px;
+  }
+
+  .faq-text {
+    font-size: 24px;
+    line-height: 147.3%;
+    margin: 0 0 60px;
+    text-align: center;
+  }
+}
+
+.questions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70%;
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    dt {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+
+      button {
+        background: #F7F7F8;
+        border: none;
+        border-radius: 6px;
+        font-size: 20px;
+        color: $base-black;
+        padding: 20px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        text-align: left;
+        margin-bottom: 15px;
+
+        &:hover {
+          background: rgba(97, 161, 153, 0.1);
+        }
+
+        &[aria-expanded="false"]::after {
+          content: url('../src/img/arrow-down.svg');
+          width: 44px;
+          text-align: right;
+        }
+
+        &[aria-expanded="true"]::after {
+          content: url('../src/img/arrow-up.svg');
+          width: 44px;
+          text-align: right;
+          font-weight: 500;
+        }
+
+        &[aria-expanded="true"] {
+          background: rgba(97, 161, 153, 0.15);
+          color: $base-green;
+        }
+      }
+    }
+
+    dd {
+      margin: 0;
+      width: 100%;
+
+      .desc {
+        font-size: 20px;
+        padding: 5px 22px 40px;
+        width: 75%;
+        margin: 0;
+      }
+
+      .hidden {
+        display: none;
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 754px) {
+  .faq-section {
+    .faq-pic {
+      width: 70%;
+      margin: 0;
+    }
+
+    .faq-h1 {
+      font-size: 32px;
+    }
+
+    .faq-text {
+      font-size: 16px;
+    }
+  }
+  .questions {
+    .faq-list {
+      width: 90%;
+
+      button {
+        font-size: 14px;
+        line-height: 147.3%;
+      }
+    }
+    .desc {
+      font-size: 14px;
+    }
+  }
+}

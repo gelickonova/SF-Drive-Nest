@@ -1,0 +1,52 @@
+@import "variables";
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 124px;
+  background-color: $footer-background;
+
+  .copyright {
+    font-family: Roboto, sans-serif;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
+    opacity: 0.4;
+    margin: 53px 40px 52px;
+  }
+
+  .social-networks {
+    margin: 49px 43px;
+    width: 138px;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .icon:hover path {
+    fill: $base-green;
+  }
+}
+
+@media screen and (max-width: 754px) {
+
+  .footer {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    .copyright {
+      font-size: 16px;
+      line-height: 19px;
+      margin: 30px 20px 16px;
+    }
+
+    .social-networks {
+      margin: 0 20px;
+    }
+
+  }
+}

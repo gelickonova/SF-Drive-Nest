@@ -1,0 +1,244 @@
+@import "header";
+.html, body {
+  margin: 0;
+  font-family: Roboto, sans-serif;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 175px;
+}
+
+.step {
+  text-align: center;
+  margin-top: 60px;
+}
+
+h1 {
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 64px;
+  line-height: 120%;
+  text-align: center;
+  color: #1B1B1B;
+  margin: 14px 0 52px;
+}
+
+h2 {
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 147.3%;
+  color: #1B1B1B;
+  margin: 0;
+}
+
+.form{
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input {
+  border: 1px solid #E0E0E0;
+  box-sizing: border-box;
+  border-radius: 6px;
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  color: #1B1B1B;
+  height: 44px;
+  padding: 14px 12px;
+  width: 100%;
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  &::placeholder{
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    color: #BDBDBD;
+  }
+
+}
+
+input:hover {
+  border: 1px solid #61A199;
+  box-sizing: border-box;
+  border-radius: 6px;
+}
+
+input:focus {
+  background: #FFFFFF;
+  border: 2px solid #61A199;
+  box-sizing: border-box;
+  border-radius: 6px;
+  outline: none;
+}
+
+.longInput {
+  width: 416px;
+}
+
+.shortInput {
+  width: 155px;
+}
+
+p {
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+
+  /* Black */
+
+  color: #1B1B1B;
+
+}
+
+.sectionMain {
+  margin-bottom: 60px;
+}
+
+.FourInputs {
+  display: grid;
+  width: 47%;
+  grid-template-areas: "h2 h2"
+    "p1 input1"
+    "p2 input2"
+    "p3 input3"
+    "p4 input4";
+  grid-template-rows: 63px 44px 44px 44px 44px;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.TwoInputs {
+  display: grid;
+  width: 47%;
+  grid-template-areas: "h2 h2"
+    "p1 input1"
+    "p2 input2";
+  grid-template-rows: 44px 44px 44px;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+
+h2 {
+  grid-area: h2;
+}
+
+#p1, #p5, #p9, #p11 {
+  grid-area: p1;
+}
+
+#p2, #p6, #p10, #p12 {
+  grid-area: p2;
+}
+
+#p3, #p7 {
+  grid-area: p3;
+}
+
+#p4, #p8 {
+  grid-area: p4;
+}
+
+#input1, #input5, #input9, #input11 {
+  grid-area: input1;
+}
+
+#input2, #input6, #input10, #input12 {
+  grid-area: input2;
+}
+
+#input3, #input7 {
+  grid-area: input3;
+}
+
+#input4, #input8 {
+  grid-area: input4;
+}
+
+.invalidContent {
+  background: #FFFFFF;
+  border: 2px solid #EB5757;
+  box-sizing: border-box;
+  border-radius: 6px;
+}
+
+.invalidContentError {
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  color: #EB5757;
+  margin: 8px 0 20px;
+}
+
+.passwordToggle{
+  background: #ffffff url("../src/img/eye-off.svg") no-repeat center;
+  border: none;
+  position: relative;
+  left: 385px;
+  bottom: 29px;
+  width: 22px;
+  height: 15px;
+  z-index: 10;
+  &:focus{
+    outline: none;
+  }
+}
+
+
+.hidden {
+  display: none;
+}
+
+.someClass {
+  padding: 17px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px -1px 0px #DEE2E4;
+  position: fixed;
+  z-index: 20;
+  bottom: 0;
+  background-color: #FFFFFF;
+  width: 100%;
+}
+
+.inactiveBtn {
+  background: #E6E6E6;
+  color: #B4B5BD;
+}
+
+.activeBtn {
+  background: #61A199;
+  color: #FFFFFF;
+}
+
+.continueBtn {
+  width: 176px;
+  height: 51px;
+  border-radius: 6px;
+  border-style: none;
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+}

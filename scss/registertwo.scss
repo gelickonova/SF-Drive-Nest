@@ -1,0 +1,117 @@
+@import "header";
+
+.html, body {
+  margin: 0;
+  font-family: Roboto, sans-serif;
+}
+
+.step-two-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+
+  .step {
+    text-align: center;
+    margin-top: 60px;
+  }
+
+  h1 {
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 64px;
+    line-height: 120%;
+    text-align: center;
+    color: #1B1B1B;
+    margin: 14px 0 52px;
+  }
+
+  .description {
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 147.3%;
+    text-align: center;
+    color: #1B1B1B;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .label-upload-photo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .previewImage {
+        position: absolute;
+        width: 432px;
+        height: 320px;
+        border-radius: 10px;
+        z-index: 10;
+      }
+
+      .photo-icon {
+        position: absolute;
+        padding: 148px 204px;
+        background: #F7F7F8;
+        border-radius: 10px;
+      }
+
+      .documents-form {
+        width: 678px;
+        height: 321px;
+        background: #FFFFFF;
+        border: 1px dashed #BDBDBD;
+        box-sizing: border-box;
+        border-radius: 10px;
+      }
+
+      .photo-input {
+        opacity: 0;
+        z-index: -1;
+      }
+
+    }
+
+    .footerBtn {
+      padding: 17px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 -1px 0 #DEE2E4;
+      position: fixed;
+      bottom: 0;
+      background-color: #FFFFFF;
+      width: 100%;
+
+      .inactiveBtn {
+        background: #E6E6E6;
+        color: #B4B5BD;
+      }
+
+      .activeBtn {
+        background: #61A199;
+        color: #FFFFFF;
+      }
+
+      .continueBtn {
+        width: 176px;
+        height: 51px;
+        border-radius: 6px;
+        border-style: none;
+        font-family: Roboto, sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19px;
+      }
+    }
+  }
+}
+

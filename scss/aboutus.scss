@@ -1,0 +1,289 @@
+@import "variables";
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+a, .button {
+  cursor: pointer;
+}
+
+a:hover, .button:hover {
+  color: $base-green;
+}
+
+
+html {
+  overflow-x: hidden;
+
+  body {
+    margin: 0;
+  }
+}
+
+p, a, h1, .button, h2 {
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+}
+
+.about-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 80px 0;
+
+  .team_pic {
+    width: 397px;
+    margin: 0 0 30px 0;
+  }
+
+  .about-h1 {
+    font-weight: bold;
+    font-size: 64px;
+    line-height: 120%;
+    margin: 30px 0;
+    text-align: center;
+  }
+
+  .about-text {
+    width: 925px;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 147.3%;
+    text-align: center;
+    color: $base-black;
+    margin: 0;
+  }
+}
+
+
+@media screen and (max-width: 980px) {
+  .about-section {
+    margin: 0;
+
+    .team_pic {
+      width: 70%;
+    }
+
+    .about-h1 {
+      font-weight: 500;
+      font-size: 32px;
+      margin: 10px 0;
+    }
+
+    .about-text {
+      width: 90%;
+      font-size: 16px;
+      margin-bottom: 40px;
+    }
+  }
+}
+
+.contacts-section {
+  width: 100%;
+  background-color: $contacts-background;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 0 100px;
+
+  .contacts-h2 {
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 120%;
+    text-align: center;
+    color: $base-black;
+    margin-bottom: 40px;
+  }
+
+  .contacts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .mail-and-tel {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 0 69px;
+
+      .link {
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 147.3%;
+        text-align: center;
+        color: #000000;
+        text-decoration: none;
+        width: 259px;
+        height: 29px;
+        margin: 5px;
+      }
+
+      .label {
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 147.3%;
+        text-align: center;
+        color: #4F4F4F;
+        margin: 0;
+      }
+    }
+
+    .rectangle {
+      background: #C8C8CF
+    }
+  }
+}
+
+
+@media screen and (max-width: 754px) {
+  .contacts-section {
+    padding: 30px;
+
+    .contacts-h2 {
+      font-size: 24px;
+      margin: 10px;
+    }
+
+    .contacts {
+      flex-direction: column;
+
+      .rectangle {
+        display: none;
+      }
+
+      .mail-and-tel {
+        margin: 10px;
+      }
+
+      .link {
+        font-size: 14px;
+      }
+
+      .label {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+.team-section {
+  margin: 80px 0 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .team-h2 {
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 120%;
+    text-align: center;
+    color: $base-black;
+    margin: 0;
+  }
+
+  .team-men {
+    margin-top: 55px;
+    display: flex;
+  }
+
+  .team-women {
+    margin-top: 60px;
+    display: flex;
+
+  }
+
+  .person {
+    margin: 0 40px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .name {
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 147.3%;
+      text-align: center;
+      color: #000000;
+      margin: 23px 0 8px
+    }
+
+    .position {
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 147.3%;
+      text-align: center;
+      color: #828282;
+      margin: 0;
+    }
+  }
+}
+
+
+@media screen and (max-width: 980px) {
+  .team-section {
+    margin: 0;
+    padding: 40px 0 60px;
+
+    .team-h2 {
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+
+
+    .team-men {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 30px;
+      margin: 0;
+
+      .person {
+        margin: 0;
+
+        .name {
+          font-size: 16px;
+          width: 167px;
+          text-align: center;
+        }
+
+        .position {
+          font-size: 12px;
+        }
+
+        .personal-pic {
+          width: 80px;
+        }
+      }
+    }
+
+    .team-women {
+      display: grid;
+      grid-template-rows: 1fr;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 30px;
+      margin-top: 30px;
+
+      .person {
+        margin: 0;
+
+        .name {
+          font-size: 16px;
+          width: 167px;
+          text-align: center;
+        }
+
+        .position {
+          font-size: 12px;
+        }
+
+        .personal-pic {
+          width: 80px;
+        }
+      }
+    }
+
+
+  }
+}
