@@ -1,6 +1,8 @@
-import {Body, Controller, Post, Res} from '@nestjs/common';
+import {Body, Controller, Post, Res, UploadedFile, UseInterceptors} from '@nestjs/common';
 import {AppService} from './app.service';
-import { Response } from 'express';
+import {Response} from 'express';
+import { diskStorage } from 'multer';
+import {FileInterceptor} from "@nestjs/platform-express";
 
 
 const mongoose = require('mongoose')
@@ -58,40 +60,57 @@ type Errors = {
 
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) {}
-
-  @Post("/registration/step1")
-  getHello(@Body() user: UserType, @Res() res: Response): string {
-    const errors: Errors = {};
-    const emailRegex = /^\S+@\S+\.\S+$/;
-
-    if (user.password !== user.repeatPassword) errors.password = true;
-    if (!user.email.match(emailRegex)) errors.email = true;
-    if (errors.password || errors.email) {
-      res.status(500).send(errors)
-    } else {
-
-      let someUser = new User(
-          {
-            fullName: user.fullName,
-            birthDate: user.birthDate,
-            email: user.email,
-            phoneNumber: user.phoneNumber,
-            passportID: user.passportID,
-            dateOfIssue: user.dateOfIssue,
-            issuingAuthority: user.issuingAuthority,
-            departmentCode: user.departmentCode,
-            numberOfLicense: user.numberOfLicense,
-            dateOfLicense: user.dateOfLicense,
-            password: user.password
-          })
-      someUser.save(err => {
-        if (err) throw err;
-        console.log('user successfully saved!')
-      })
-        res.sendStatus(200)
-      return '';
+    constructor(private readonly appService: AppService) {
     }
-  }
+
+    @Post("/registration/step1")
+    getHello(@Body() user: UserType, @Res() res: Response): string {
+        const errors: Errors = {};
+        const emailRegex = /^\S+@\S+\.\S+$/;
+
+        if (user.password !== user.repeatPassword) errors.password = true;
+        if (!user.email.match(emailRegex)) errors.email = true;
+        if (errors.password || errors.email) {
+            res.status(500).send(errors)
+        } else {
+
+            let someUser = new User(
+                {
+                    fullName: user.fullName,
+                    birthDate: user.birthDate,
+                    email: user.email,
+                    phoneNumber: user.phoneNumber,
+                    passportID: user.passportID,
+                    dateOfIssue: user.dateOfIssue,
+                    issuingAuthority: user.issuingAuthority,
+                    departmentCode: user.departmentCode,
+                    numberOfLicense: user.numberOfLicense,
+                    dateOfLicense: user.dateOfLicense,
+                    password: user.password
+                })
+            someUser.save(err => {
+                if (err) throw err;
+                console.log('user successfully saved!')
+            })
+            res.sendStatus(200)
+            return '';
+        }
+    }
+
+    @Post('registration/step2')
+    @UseInterceptors(
+        FileInterceptor('file', {
+            storage: diskStorage({
+                destination:'/files',
+                filename: (req, file, callback) =>{
+                    callback(null, file.originalname)
+                }
+            })
+        })
+    )
+    uploadFile(@UploadedFile()file) {
+        console.log(file)
+        return
+    }
 
 }
