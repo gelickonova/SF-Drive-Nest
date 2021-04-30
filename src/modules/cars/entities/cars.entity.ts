@@ -24,5 +24,12 @@ export class CarsEntity {
     @Column()
     carBody: string;
 
-    //TODO
+    @Column()
+    transmission: string;
+
+    @Column()
+    driveUnit: string;
+
+    @Column()
+    mileage: string;
 }

@@ -1,9 +1,11 @@
-export interface CarsInterface{
+export interface CarsInterface {
     id;
-    model;
-    year;
-    owner;
-    engine;
-    carBody;//TODO
-
+    model: string;
+    year: string;
+    owner: string;
+    engine: string;
+    carBody: string;
+    transmission: string;
+    driveUnit: string;
+    mileage: string;
 }
